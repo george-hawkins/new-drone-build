@@ -1,6 +1,10 @@
-For motors and ESCs, there are no end of manufacturers - below I've chosen popular hobbyist level components that are readily available. That doesn't mean that these are necessarily the best but they're a good starting point.
+Parts
+=====
 
-### Flight controller
+For motors, ESCs etc., there are no end of manufacturers - below I've chosen popular hobbyist level components that are readily available. That doesn't mean that these are necessarily the best but they're a good starting point.
+
+Flight controller
+-----------------
 
 PX4 (the people who, among other things, develop the Pixhawk schematics) maintain a [list](https://docs.px4.io/v1.11/en/flight_controller/) of Pixhawk flight controllers.
 
@@ -44,7 +48,8 @@ For me, at the moment, the choice _for a hobbyist drone_ comes down to choosing 
 
 Final choice: [Holybro Pixhawk 4 & M8N GPS combo - Banggood.com](https://www.banggood.com/HolyBro-Pixhawk-4-Autopilot-Flight-Controller-M8N-GPS-Module-Combo-p-1302123.html?ID=534790)
 
-### Flight controller damping
+Flight controller damping
+-------------------------
 
 Damping platforms used to be considered essential, by many people, e.g.:
 
@@ -53,7 +58,8 @@ Damping platforms used to be considered essential, by many people, e.g.:
 
 But nowdays the flight controllers generally include some form of internal damping for the relevant components and they ship with simple damping foam that's usually considered enough. If you need to buy this kind of foam, there are no end of fairly random products (usually _claiming_ to be 3M based). ArduPilot suggest [mRo PixHawk damping foams](https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm) (at $23, they're fairly expensive). For more see [here](https://ardupilot.org/copter/docs/common-vibration-damping.html).
 
-### ESCs
+ESCs
+----
 
 Oddly, the processors used in modern ESCs are more powerful than those used in the first ArduPilot flight controllers. Currently, the most popular firmware for ESCs is BLHeli. This firmware used to be open source until they switched to ARM 32-bit MCUs. I had hoped a community would develop around the last open source BLHeli release and continue developing it but this hasn't happened. So instead one should just accept the closed source nature and find a suitable modern BLHeli_32 ESC.
 
@@ -75,7 +81,7 @@ TODO: lookup how the telemetry cables are wired into the Pixhawk. To wire up a c
 * [JST-GH housings - ApiExpress](https://www.aliexpress.com/item/4000492364443.html)
 * [pre-crimped wires for JST-GH connectors - ApiExpress](https://www.aliexpress.com/item/4000585046133.html)
 
-#### ArduPilot BLHeli setup
+### ArduPilot BLHeli setup
 
 [ArduCopter - BLHeli_32 pass-through support](https://ardupilot.org/copter/docs/common-blheli32-passthru.html)
 
@@ -83,7 +89,8 @@ TODO: lookup how the telemetry cables are wired into the Pixhawk. To wire up a c
 
 Note: according to one of the Banggood reviews, they couldn't set up the the Racerstar Tattoo 30A ESCs with pass-through. Googling finds lots of confused people using pre-BLHeli_32 configurators and the like, so it's hard to tell if this is an issue.
 
-### 60a 4in1 ESCs
+60a 4in1 ESCs
+-------------
 
 An interesting alternative to individual ESCs might be a 4in1. Most of these have fairly low amp limits but two that support 60A or more are:
 
@@ -92,7 +99,8 @@ An interesting alternative to individual ESCs might be a 4in1. Most of these hav
 
 While these are only around 60A and the combined ampage of four of the ESCs is about twice that, some of the DJI ESCs that they used to recommend for use with their F450 frame were around 15A each.
 
-### Capacitors
+Capacitors
+----------
 
 This [GetFPV page](https://www.getfpv.com/learn/new-to-fpv/all-about-multirotor-fpv-drone-electronic-speed-controller/) notes that ESCs used to often come with capacitors but in the race to reduce size they've been removed even though the need for them still remains. My DJI 420 Lite ESCs use Rubycon 330&micro;F 25V - like [these](https://www.digikey.ch/products/en/capacitors/aluminum-electrolytic-capacitors/58?pv2049=u330%C2%B5F&pv2079=u25V&s=33170) from Digikey.
 
@@ -114,7 +122,8 @@ If you put capacitors across the ESCs power terminals then cover the entire ESC 
 
 **TODO:** is there any guide to what size capacitors one should use for a given ampage ESC? I don't have an answer but my impression is that 1000&micro;F are _huge_ and only necessary if you're planning to just use one capacitor (soldered across the battery connector), 470&micro;F should be more than enough (in this [video](https://youtu.be/oDFclImvl6M) they're used with 35A ESCs, not that that's definitive) and 330&micro;F seem to be enough for most racing setups even for larger 7" vehicles, i.e. 300mm wheelbase.
 
-### Motors
+Motors
+------
 
 6mm screws:
 
@@ -170,7 +179,8 @@ Various AliExpress stores also sell considerably cheaper X22 adapters:
 
 ThanksBuyer also sell [adapter pairs](https://www.thanksbuyer.com/3-12-self-locking-quick-release-cnc-aluminum-propeller-base-cw-ccw-1pair-for-9443-9450-propeller-40632) (you'd need two pairs).
 
-### Propellers
+Propellers
+----------
 
 Various people produce suitable self-tightening propellers:
 
@@ -191,7 +201,8 @@ Interesting folding alternatives:
 
 Final choice: DJI 9450 CW & CCW pair or HolyBro 1045 full set.
 
-### S500 frame
+S500 frame
+----------
 
 DJI used to produce an extremely popular quadcopter frame called the F450 and many other manufacturers produces clones and variants of this frame. However, now nearly everyone is focusing on the smaller racing drone frames.
 
@@ -207,7 +218,8 @@ Generally, the flight controller is placed on the top plate and the battery is s
 
 The PX4 people have instructions for building the S500 with the Pixhawk 4 [here](https://docs.px4.io/master/en/frames_multicopter/holybro_s500_v2_pixhawk4.html). HolyBro, oddly, have just printed this build log as a PDF and used this as their official manual.
 
-### Classic F450-style frame
+Classic F450-style frame
+------------------------
 
 Various manufacturers have discontinued their F450-style frames, e.g.:
 
@@ -233,7 +245,8 @@ Banggood and AliExpress have various models that all _look_ like the Readytosky 
 
 **Warning:** for the AliExpress stores, it's fairly unclear what you're buying - in particular at the Magic Power store, it's very unclear that all options except the first one relate to the smaller F330 rather than the F450.
 
-### Hexsoon EDU450
+Hexsoon EDU450
+--------------
 
 An interesting recently released frame is the Hexsoon EDU450. The pedigree of this frame is a little unclear, it's been produced in cooperation between ArduPilot and ProfiCNC as a [reference frame](https://ardupilot.org/copter/docs/reference-frames.html). The manufacturing side of ProfiCNC is called Hex but the actual frame seems to have been developed for them by [DonSoon](http://www.donsoon.com/product/450mm-multi-rotor-UAV.html) (with the Hexsoon product name being an amalgamation of both the Hex and DonSoon names). As usually with these kind of Chinese companies it's impossible to tell what kind of relationship there is between the two.
 
@@ -251,7 +264,8 @@ Note that the unboxing video and the ArduPilot Discourse thread are rather disco
 
 At the moment, at about twice the price, it looks rather pricey compared to the [HolyBro S500 ARF V2 frame kit](https://shop.holybro.com/s500-arf-v2-frame-kit_p1216.html) that also has motors, ESCs, propellers etc. The S500 has plastic arms (reinforced with steel rods), while the EDU450 is made from carbon fiber and has a larger central space for mounting equipment. However, I'm not sure that's enought to justify the price difference.
 
-### Large frames
+Large frames
+------------
 
 Tarot produce a whole range of large frames such as the [Tarot Ironman 650 (Banggood)](https://www.banggood.com/Tarot-Full-Folding-Carbon-Fiber-4-Axis-IRON-MAN-650-TL65B01-Rack-p-89713.html).
 
@@ -270,7 +284,8 @@ Random large-ish frames:
 * [HobbyKing Super-H 600](https://hobbyking.com/en_us/hobbyking-super-h-600-quadcopter-kit.html)
 * [Daya 680 (AliExpress)](https://www.aliexpress.com/item/32886038214.html)
 
-### Smaller frames
+Smaller frames
+--------------
 
 The classic step down in size from the F450-style frames is the no longer available DJI F330. However, clones of the F330 are still available:
 
@@ -302,7 +317,8 @@ Quote from this build guide:
 
 When talking about non-racing drones, referring to the wheelbase, i.e. the distance from the center of one motor to the center of the diagonally opposite motor, seems to be more common.
 
-### Transmitter
+Transmitter
+-----------
 
 The lower end of the FrSky range now consists of 3 models:
 
@@ -332,7 +348,7 @@ From HorusRC:
 
 HorusRC seems to have somewhat better pricing than Banggood. Note that the regional stores (US, EU etc.) carry a very limited range - just use the global store.
 
-#### Transmitter batteries
+### Transmitter batteries
 
 For the newer transmitter models you need two 18650 li-ion batteries, e.g. [NCR18650B 3400mAH (Banggood)](https://www.banggood.com/2pcs-NCR18650B-3400mAH-3_7-V-Unprotected-Rechargeable-Lithium-Battery-p-87078.html). These batteries cost ~US$7 from Banggood, which is about the right price, they're cheaper from the [18650BatteryStore](https://www.18650batterystore.com/Panasonic-18650-p/panasonic-ncr18650b.htm), at around $5. Something similar - the Samsung INR18650 30Q - from [Conrad](https://www.conrad.ch/de/p/samsung-inr18650-30q-spezial-akku-18650-flat-top-hochstromfaehig-li-ion-3-6-v-3000-mah-1558875.html) is about US$8. Reichelt have a two pack of suitable [Samsung batteries](https://www.reichelt.com/industriezelle-18650-3-6-v-3450-mah-ungeschuetzt-2er-pack-sam-18650-35e-p261044.html) for about US$10. Whether the ones from Banggood are genuine is another matter - it's not clear either way.
 
@@ -342,7 +358,7 @@ There are also button-top variants of these batteries - the transmitter seems to
 
 The manual confirms that the batteries "can be balance charged via the Mini USB interface," so you don't need a separate charger.
 
-#### Transmitter batteries for older models
+### Transmitter batteries for older models
 
 The [NiMH battery pack](https://www.banggood.com/Frsky-ACCST-Taranis-Q-X7-Transmitter-Spare-Part-7_2V-AA-2000mAh-NiMH-Battery-for-RC-Drone-FPV-Racing-p-1153564.html) has a 3-pin female connector (with the middle pin left unconnected). A 3-pin connector is a _2S_ connector, for an extension cable one would use:
 
@@ -352,7 +368,8 @@ The [NiMH battery pack](https://www.banggood.com/Frsky-ACCST-Taranis-Q-X7-Transm
 
 The FrSky FCX07 NiMH charger seems to be discontinued but you can still buy it from places like [GetFPV](https://www.getfpv.com/frsky-taranis-q-x7-fcx07-li-nimh-dual-mode-charger.html) (and also as a [bundle](https://www.getfpv.com/frsky-fcx07-charger-with-2000mah-nimh-battery-for-q-x7-x7s-combo-kit.html) with the NiMH battery).
 
-### Receiver (RX)
+Receiver (RX)
+-------------
 
 For this kind of project, there are basically two interesting FrSky receivers:
 
@@ -375,13 +392,13 @@ Protocol aside, the R-XSR and RX4R are very similar to the Archer RS and Archer 
 
 So why include the X8R here but not the similar Archer R8 above? The X8R has even more unneeded PWM output pins but the extra size means they can fit in servo connector for SBUS and S.PORT which is quite convenient - you can use standard servo cables to connect it up. The Archer R8 also has a servo connector for SBUS but a non-standard S.PORT connector so isn't quite so convenient in this respect.
 
-#### F.PORT
+### F.PORT
 
 The Archer series feature F.PORT, which is SBUS and S.PORT rolled into a single wire, and continue to support SBUS and S.PORT broken out onto seprate wires. According to the ArduPilot [documentation](https://ardupilot.org/copter/docs/common-FPort-receivers.html) F.PORT support will not be available until version 4.1, there's no ETA for 4.1 but minor releases tend to come out once a year and 4.0.0 came out at the end of 2019.
 
 F.PORT version 1 just supported a direct connection between receiver and flight controller with only the flight controller being capable of feeding the receiver with S.PORT style data. In June 2020, F.PORT version 2 came out where you can add in the usual S.PORT capable sensors like the [FLVSS](https://www.frsky-rc.com/product/flvss/). It's only version 2 that's of interest for our setup. See more details from [Oscar Liang](https://oscarliang.com/setup-frsky-fport/).
 
-#### RX antennas
+### RX antennas
 
 An alternative to taping the antennas to the quadcopter arms is an atenna mount:
 
@@ -397,7 +414,8 @@ Molex and Taoglas (only by Mouser) produce various suitable PCB antennas with al
 * [Mouser antenna](https://eu.mouser.com/Passive-Components/Antennas/_/N-8w0fa)
 * [Digikey antenna](https://www.digikey.ch/products/en/rf-if-and-rfid/rf-antennas/875)
 
-### Video transmitter (VTX)
+Video transmitter (VTX)
+-----------------------
 
 Oscar Liang maintains a [best VTX](https://oscarliang.com/top-5-best-vtx-mini-quad/) page. His cheapest choice is the Eachine TX526 which has been around for years (and which I bought back in 2017, along with the massive TX832).
 
@@ -405,7 +423,8 @@ As of late 2020, his best value transmitter is the [TX805 (Banggood)](https://ww
 
 As pointed out in his review, you can mount this VTX on top of a standard 30x30 stack (as shown [here](https://oscarliang.com/ctt/uploads/2019/03/Eachine-TX805-Video-Transmitter-mini-quad-stack.jpg)).
 
-### Configuring the VTX
+Configuring the VTX
+-------------------
 
 On a massive old style VTX like the TX832, it's easy enough to set things up via the buttons on the device itself. This all gets a bit more fiddly with smaller VTXs, e.g. on the TX805 everything has to be done with a single button and you have to interpret what's happening via an array of tiny blue and red LEDs.
 
@@ -415,13 +434,13 @@ Oscar Liang has a [guide](https://oscarliang.com/vtx-control/) to configuring th
 
 There is an [open MR](https://github.com/ArduPilot/ardupilot/pull/15174) that's actively being worked on (mid-October, 2020) and a corresponding discussion [thread](https://discuss.ardupilot.org/t/is-there-a-way-to-get-smartaudio-working/29025/58) but at the moment there is no SmartAudio support in ArduPilot.
 
-#### VTX notes
+### VTX notes
 
 In this [page](https://oscarliang.com/choose-video-transmitter-fpv-mini-quad/) he also discusses why adjusting your VTX to maximum power may actually have negative consequences in terms of heat, multipath interference and interference with others. He notes that you should use 25mW indoors and that many races mandate 25mW and recommends 200mW as "a conservative option that provides the best of both worlds [i.e. 25mW and 600mW]" for outdoor flying. He also notes that 600mW isn't so dramatically better than 25mW due to the diminishing returns implied by the inverse square aspect of things. Note that at 25mW the VTX will be uncomfotably hot and at 200mW and above it'll be too hot to touch - air flow cools it down so, in general, avoid running it when not in movement.
 
 Aside: see [PAL vs NTSC](https://oscarliang.com/pal-ntsc-fpv-quadcopter/) - basically its a choice between better image quality (PAL) and more frames-per-second (NTSC) and there's no clear choice one way or the other.
 
-#### VTX antennas
+### VTX antennas
 
 The TX805 features an MMCX connector which is viewed as a big improvement over the older SMA connectors (which was subject to being torn off the VTX during crashes). However, the SMA connectors had the advantage of providing a stable mounting point. If you use the TX805's MMCX to SMA adapter then you'll also need a mount like [this](https://www.banggood.com/Eachine-Wizard-X220HV-FPV-Racing-RC-Drone-Spare-Part-Antenna-Fixing-Seat-Mount-3D-Printing-p-1392505.html) (which can be used as shown [here](https://imgaz.staticbg.com/customers_images/newlarge/c6/9a/2020051913320129-1392505.jpg) or even nicer, handling both VTX and RX antennas, as shown [here](https://imgaz.staticbg.com/customers_images/newlarge/c6/4f/2019111617283117-1392505.jpg)).
 
@@ -431,7 +450,7 @@ Note: 90&deg; sounds odd but the idea is if, for whatever reason, you want to mo
 
 As usual, Oscar Liang has a nice [overview](https://oscarliang.com/best-fpv-antenna/) of VTX antennas.
 
-#### More antenna options
+### More antenna options
 
 Two popular antenna styles at the moment are pagoda and stubby/lollipop. The Realacc UXII, mentioned above is a stubby antenna, and the Foxeer Pagoda Pro is obviously a pagoda. Both seem to be excellent antennas (and not just the ones that happen to be on Banggood). On the whole Foxeer seems to produce more premium priced products than Realacc.
 
@@ -443,13 +462,14 @@ Interestingly, Foxeer also produce a [version](https://www.banggood.com/2pcs-Fox
 
 As usual with this kind of thing, there's no clear information saying Lollipops are better than Pagodas or vice-versa (which is odd as the Lollipops are more expensive). Oscar Liang doesn't come down clearly one way or another in his [round up](https://oscarliang.com/best-fpv-antenna/) of antennas. My impression is that the Pagodas _may_ be technically better but their PCBs are easily knocked out of alignment and that the Lollipops are far more robust (which is important when racing).
 
-### Camera
+Camera
+------
 
 For combined FPV and HD video the current best option seems to be the RunCam Split 3 Micro (there's also an even smaller Nano variant but in choosing it seems a better choice to choose the improved image quality that comes with the larger lens of the only slightly larger Micro model). Oscar's review is [here](https://oscarliang.com/runcam-split-3-camera/).
 
 You can find the current RunCam recoding cameras [here](https://shop.runcam.com/fpv-hd-recording-camera/) on their site. As pointed out in Oscar's review, there's now also a Split 4 but this is a HD Micro only camera - paying even just slightly extra for HD with such a tiny lens seems pointless.
 
-#### Pure HD camera
+### Pure HD camera
 
 An alternative to the Split is a pure HD camera, like the [RunCam 5](https://shop.runcam.com/runcam-5-orange/) or the [RunCam 2](https://shop.runcam.com/runcam2/) (see RunCam's [action camera](https://shop.runcam.com/action-camera/) and [HD camera](https://shop.runcam.com/fpv-hd-recording-camera/) sections). These can be connected up to a VTX and power using [this cable](https://shop.runcam.com/tv-out-and-power-cable-for-runcam-2/).
 
@@ -457,7 +477,7 @@ These cameras have much betters lenses than the smaller Split and the higher lat
 
 Note: you'd need a step-down voltage regulator that can output 5V for the USB power supply. You can get combination regulators that can output 12V for the VTX and 5V for the camera.
 
-#### Pure FPV camera (with recorder)
+### Pure FPV camera (with recorder)
 
 Another alternative, if you're not interested in HD recorded footage, is simply a basic FPV camera like the [RunCam Swift 2](https://shop.runcam.com/runcam-swift-2/). This is far cheaper than something like the RunCam 5 or 2 or the Split. And it's far smaller - it has neither the large battery compartment of the RunCam 5 or 2 nor the secondary PCB of the Split. And its much lower power consumption means it can be powered directly off the VTX (most have a 5V output for the camera that's generally capable of fairly limited amps).
 
@@ -465,7 +485,8 @@ The RunCam Swift 2 is a "full size" camera (see [here](https://oscarliang.com/be
 
 Note: you can actually combine a pure FPV camera like the Swift with a tiny on-board recorder like [this](https://shop.runcam.com/runcam-mini-fpv-dvr/) from RunCam. You will, of course, be recording a classic analogue TV signal rather than 1080p but it won't suffer from the interference seen if recording the transmitted signal.
 
-### VTX power consumption
+VTX power consumption
+---------------------
 
 It's remarkably hard to find power consumption data for VTXs. This [post](https://fpvlab.com/forums/showthread.php?30580-Vtx-output-power-relationship-to-consumed-power&s=538b86b105aa90cbe388b40a5fe84ef5&p=516843&viewfull=1#post516843) gives the following numbers (derived from ImmersionRC and Fatshark specs) - the left being the power output and the right being the power consumed by the VTX:
 
@@ -515,7 +536,8 @@ At 12V the RunCam Split 3 Micro requires 270mA.
 
 So a 12V regulator capable of 1A should be more than enough to supply both (and in reality, if you only use the VTX at 200mW or less, you'll probably never use more than 0.6A).
 
-### 12V / 5V step-down voltage regulator
+12V / 5V step-down voltage regulator
+------------------------------------
 
 The camera and VTX need a step-down voltage regulator - the VTX typically needs 12V and, in turn, provides a 5V output for the camera. However, the Split draws more power than a typical camera and more than most VTXs are happy supplying (see elsewhere here for more details). The Split can though take 12V, so it seems best to power them both via the same regulator.
 
@@ -533,7 +555,7 @@ If you have lower current requirements, you can use something like the [Diatone 
 
 **TODO:** the consensus seems to be that you shouldn't connect the VTX directly to the battery voltage even though many VTXs can handle the stated voltage. The VTX has a step-down voltage regulator, why does adding another in-between it and the battery make everything OK? Is it simply that a regulator like the Pololu one is more substantial and capable? If so, why not sell VTXs without regulators, leaving it instead to something like the Pololu board or why not sell VTXs with a regulator that matches the Pololu one and is suitable for direct connection to the battery?
 
-#### Combined 12V and 5V PDBs
+### Combined 12V and 5V PDBs
 
 It doesn't seem possible to get BECs that can handle both 12V and 5V simultaneously - the best you can do are PDBs like this [Matek 36x36mm hub](http://www.mateksys.com/?portfolio=hub5v12v) ([here](https://www.banggood.com/Matek-Mini-Power-Hub-Power-Distribution-Board-PDB-With-BEC-5V-And-12V-for-RC-Drone-FPV-Racing-p-1005549.html) from Banggood). They also have a [larger hub](http://www.mateksys.com/?portfolio=pdb-xt60) ([here](https://www.banggood.com/Matek-Systems-PDB-XT60-W-or-BEC-5V-and-12V-2oz-Copper-for-RC-Drone-FPV-Racing-Multi-Rotor-p-1049051.html) from Banggood) for 6 ESCs where the main board is the same size but the power connector is pushed out (and has holes for an XT60 connector) to make more room for the ESC pads.
 
@@ -541,7 +563,8 @@ While it may seem odd to buy a PDB just for its voltage regulators, remember tha
 
 Having said that the 36x36mm form factor means they didn't have to pack in the components. If you combined a similarly capable 12V board and a 5V board from Pololu you'd use half that space (at a dramatically higher price, it has to be said).
 
-### Plates and parts for Split and VTX stack
+Plates and parts for Split and VTX stack
+----------------------------------------
 
 For a base for the VTX and the HD component of the Split that could be stuck down to the frame one could use a 30x30mm plate:
 
@@ -578,15 +601,17 @@ Damping balls:
 
 Also popular (in fact more popular) are these Realacc [M3*7+4.5mm damping screws](https://www.banggood.com/4-PCS-Realacc-M3+7+4_5-Flight-Controller-Anti-Vibration-Fixed-Screws-for-RC-Drone-FPV-Racing-p-1135527.html) (although from the photos, it's hard to see how they damp anything).
 
-### Micro camera mounts
+Micro camera mounts
+-------------------
 
 There are surprisingly few free standing micro mounts, this [one](https://www.banggood.com/RunCam-Micro-Swift-Camera-Bracket-Fixed-Mount-Holder-p-1170444.html) and [this](https://www.banggood.com/Runcam-Micro-Swift-Micro-Swift-2-Camera-Mount-Holder-30_530_5mm-Mounting-Distance-For-FPV-Racer-p-1156801.html) seem to be it on Banggood. Presumably such cameras are usually attached directly to the frame.
 
-### Action camera mounts
+Action camera mounts
+--------------------
 
 The RunCam 5 has the same dimensions as the GoPro Session cameras, i.e. 38x38x36mm.
 
-#### GoPro style mounts
+### GoPro style mounts
 
 By GoPro style, I mean mounts with an adjustable angle. Mounts suitable for the RunCam 5 from AliExpress:
 
@@ -600,7 +625,7 @@ Mounts A, B and C (there's no other obvious names to give them) seem to be clone
 
 [Adjustable GoPro style mount](https://www.banggood.com/RunCam2-Camera-Mount-Support-GoPro-Action-Camera-p-1031391.html) for the RunCam 2 (although it's not clear from the Banggood listing, RunCam list this product on their site, i.e. it's not a third-party product).
 
-#### Fixed FPV style mounts
+### Fixed FPV style mounts
 
 By FPV style, I mean mounts with a fixed angle (typically 30&deg;):
 
@@ -611,14 +636,15 @@ By FPV style, I mean mounts with a fixed angle (typically 30&deg;):
 
 Mount A is the best selling, is flexible (as shown in [this photo](https://imgaz.staticbg.com/customers_images/newlarge/e5/1b/2020052712030844-1166269.jpg)) and looks like the obvious choice for this style of mount.
 
-#### Mounts for classic style GoPro cameras
+### Mounts for classic style GoPro cameras
 
 By classic style, I mean the classic wide, i.e. non-cube, style of GoPro action camera:
 
 * [Adjustable mount](https://www.banggood.com/GEPRC-FPV-Camera-Adjustable-Fix-Mount-for-Gopro-Runcam-GEP150-GEP180-GEP210-Frame-Kit-p-1058697.html)
 * [FPV-style fixed mount](https://www.banggood.com/GE-FPV-TPU-30-3D-Printed-Soft-Camera-Mount-for-XIAOYIGopro-p-1180977.html)
 
-### Liquid electrical tape
+Liquid electrical tape
+----------------------
 
 An interesting alternative to electrical tape is liquid electrical tape (described [here](https://oscarliang.com/tool-spare-multirotors-quadcopter-equipment/)). In the US the main brands for this seems to be Star Brite and Plasti Dip.
 
@@ -637,7 +663,8 @@ Oddly, Conrad doesn't sell the paint form from their .ch store and incorrectly c
 
 **Important:** silicone sealants are popular for home repairs but they're not suitable for use with electronics - in sealant form they release acetic acid which is corrosive for electronics (although there do also appear to be _neutral cure_ silicone sealants that are suitable when installing things like AC units).
 
-### Heat shrink tubing
+Heat shrink tubing
+------------------
 
 Banggood doesn't seem to be a great source for heat shrink tubing for things thicker than cables, there's this:
 
@@ -661,7 +688,8 @@ Reichelt sell 200mm lengths of heat shrink that shrinks to 4.8mm, 6.4mm and 9.5m
 
 Conrad sell heat shrink over a [far wider range](https://www.conrad.com/o/heat-shrink-tubes-0200231) of sizes (though in their filtering they often seem to have confused pre and post shink size).
 
-### Video receivers
+Video receivers
+---------------
 
 Oddy, the ROTG01 PRO lists for less than the plain ROTG01 on [Eachine's site](https://www.eachine.com/FPV-TRANSMITTER-&-RECEIVER-c-156.html).
 
@@ -671,7 +699,8 @@ Oddy, the ROTG01 PRO lists for less than the plain ROTG01 on [Eachine's site](ht
 
 For whatever reason, Eachine no longer list the R051 (the ROTG range is for Android, the R051 was for iOS) and it's no longer available on Banggood.
 
-### Telemetry radio
+Telemetry radio
+---------------
 
 [Transceiver Telemetry Radio Set V3,433MHz](https://shop.holybro.com/transceiver-telemetry-radio-set-v3_p1103.html)
 
@@ -683,11 +712,13 @@ For whatever reason, Eachine no longer list the R051 (the ROTG range is for Andr
 
 [Holybro 433Mhz 915Mhz 500mW Transceiver Radio Telemetry Set V3 for PIXHawk 4 Flight Controller Sale - Banggood.com](https://www.banggood.com/Holybro-433Mhz-915Mhz-500mW-Transceiver-Radio-Telemetry-Set-V3-for-PIXHawk-4-Flight-Controller-p-1325025.html?ID=554541)
 
-### Sensors
+Sensors
+-------
 
 [FrSky Smart Port Lipo Sensor FLVSS - US$18.99](https://www.banggood.com/FrSky-Smart-Port-Lipo-Sensor-FLVSS-p-929070.html)
 
-### GPS
+GPS
+---
 
 [Mini GPS Folding Antenna Base/Silver](https://hobbyking.com/en_us/mini-gps-folding-antenna-base-silver.html)
 
@@ -695,7 +726,8 @@ For whatever reason, Eachine no longer list the R051 (the ROTG range is for Andr
 
 [GPS Seat Folding Bracket Mounting Set Holder Folding Antenna Base For Radio Remote Controller Aircraft Model Rc Toys-in Parts & Accessories from Toys & Hobbies on Aliexpress.com | Alibaba Group](https://www.aliexpress.com/item/GPS-Seat-Folding-Bracket-Mounting-Set-Holder-Folding-Antenna-Base-For-Radio-Remote-Controller-Aircraft-Model/32838863518.html)
 
-### Parallel charging
+Parallel charging
+-----------------
 
 [LiPo Battery Parallel Charging Tutorial - Oscar Liang](https://oscarliang.com/parallel-charging-multiple-lipo/)
 
@@ -705,7 +737,8 @@ For whatever reason, Eachine no longer list the R051 (the ROTG range is for Andr
 
 [Amass v3 xt60 plug lipo parallel charger board for imax b6 charger Sale - Banggood.com](https://www.banggood.com/Amass-V3-XT60-Plug-Lipo-Parallel-Charger-Board-p-1031262.html)
 
-### Dischargers
+Dischargers
+-----------
 
 [3 in 1 diy resistor discharger for draining disposing battery Sale - Banggood.com](https://www.banggood.com/3-in-1-DIY-Resistor-Discharger-for-Draining-Disposing-Battery-p-1418862.html)
 
@@ -727,7 +760,8 @@ For whatever reason, Eachine no longer list the R051 (the ROTG range is for Andr
 
 [0v lipo killer discharger for lipo battery with xt60 & xt30 plug rc drone fpv racing Sale - Banggood.com](https://www.banggood.com/0V-Lipo-Killer-Discharger-for-Lipo-Battery-with-XT60-XT30-Plug-RC-Drone-FPV-Racing-p-1387952.html)
 
-### Connecting ESCs to motors
+Connecting ESCs to motors
+-------------------------
 
 [Image](https://cdn.shopify.com/s/files/1/0076/7098/8859/t/6/assets/description_image_pre_soldered_jpg) showing what you're aiming for when soldering bullet connectors between motors and ESCs (unfortunately the image is served as `application/octet-stream` so it downloads and can't be displayed inline).
 
@@ -751,7 +785,8 @@ The MR30 connector seems to be specifically for connecting ESCs to motors. The M
 
 [5 Pair 2mm Gold Bullet Connectors Banana Plugs For RC Car/Drone Lipo Battery Sale - Banggood.com](https://www.banggood.com/5-Pair-2mm-Gold-Bullet-Connectors-Banana-Plugs-For-RC-CarDrone-Lipo-Battery-p-1046104.html)
 
-### Skids
+Skids
+-----
 
 [4PCS Landing Skid Gear Frame Anti-vibration M3 Sponge for 210 220 250 RC Drone FPV Racing Multi Rotor Sale - Banggood.com](https://www.banggood.com/4PCS-Landing-Skid-Gear-Frame-Anti-vibration-M3-Sponge-for-ZMR250-QAV250-QAV210-RC-Multirotor-p-1063891.html?ID=224)
 
@@ -759,7 +794,8 @@ The MR30 connector seems to be specifically for connecting ESCs to motors. The M
 
 [Realacc 50pcs landing skid gear frame anti-vibration m3 sponge for zmr250 qav250 210 rc drone fpv racing Sale - Banggood.com](https://www.banggood.com/Realacc-50PCS-Landing-Skid-Gear-Frame-Anti-vibration-M3-Sponge-for-ZMR250-QAV250-210-RC-Drone-FPV-Racing-p-1081168.html?ID=224)
 
-### Gimbals
+Gimbals
+-------
 
 Feiju comes with session adapter (I think) but exposes no control pins - [FeiyuTech Feiyu WG2X Splash-proof 3-axis Wearable Gimbal Stabilizer For GoPro He - US$177.58](https://www.banggood.com/FeiyuTech-Feiyu-WG2X-Splash-proof-3-axis-Wearable-Gimbal-Stabilizer-For-GoPro-Hero-7-6-5-4-Session-Sony-RX0-YI-4K-Sport-Camera-p-1560183.html)
 
@@ -781,7 +817,8 @@ Fr. 144 - Xiami has the [Mi Action 4K](https://www.digitec.ch/de/s1/product/xiao
 
 GoPro and DJI have action cameras starting in the Fr. 200+ range.
 
-### Gimbal controller
+Gimbal controller
+-----------------
 
 [ENSYS SToRM32 V3.3 Board (Beta) – ENSYS](https://www.ensys.lt/product/ensys-storm32-v3-3-board-beta/)
 
@@ -789,7 +826,8 @@ GoPro and DJI have action cameras starting in the Fr. 200+ range.
 
 [Getting Started - STorM32-BGC Wiki](http://www.olliw.eu/storm32bgc-wiki/Getting_Started)
 
-### Helping hands
+Helping hands
+-------------
 
 [Metal Base Universal 4 Flexible Arms Soldering Station PCB Fixture Helping Hands - US$34.99](https://www.banggood.com/Metal-Base-Universal-4-Flexible-Arms-Soldering-Station-PCB-Fixture-Helping-Hands-Four-Hand-p-1282415.html)
 
@@ -805,7 +843,8 @@ GoPro and DJI have action cameras starting in the Fr. 200+ range.
 
 [Tarot tl3t02 t-3d iv 3 axis brushless gimbal for hero 4 session camera for rc drone fpv airplane Sale - Banggood.com](https://www.banggood.com/Tarot-TL3T02-T-3D-IV-3-Axis-Brushless-Gimbal-for-Hero-4-SESSION-Camera-for-RC-Drone-FPV-Airplane-p-1090577.html)
 
-### Battery top plate
+Battery top plate
+-----------------
 
 TL65B03:
 
@@ -831,7 +870,8 @@ Both of these plates may actually be a bit too large for the S500 top - the top 
 
 The bottom plate is more substantial - it's 100mm wide (with no curving in) and 200mm long.
 
-### Battery plate bottom
+Battery plate bottom
+--------------------
 
 The alternative idea would be to create a space under the bottom plate, e.g. with a TL68B14 at front and back, essentially creating a landing surface.
 
@@ -847,7 +887,8 @@ FlyingTech also has the [TL8X006](https://www.flyingtech.co.uk//frames-props-par
 
 Note: The TL8X017 plate that I was considering as a bottom plate is far to big for the S500 at 198x154mm.
 
-### Helicopter skids
+Helicopter skids
+----------------
 
 Yet another idea would be to use helicopter skids:
 
@@ -855,13 +896,15 @@ Yet another idea would be to use helicopter skids:
 
 [Alzrc landing skid for t-rex 450 pro devil 450 465 480 helicopter Sale - Banggood.com](https://www.banggood.com/ALZRC-Landing-Skid-For-T-REX-450-Pro-Devil-450-465-480-p-990767.html?ID=226)
 
-### Standoffs
+Standoffs
+---------
 
 [Online Shopping Fasteners at best prices in Banggood](https://www.banggood.com/Wholesale-Attribute-Fasteners-c-12093-s-5500v51047-5049v47892.html)
 
 [Search results for: 'aluminium spacer'](https://hobbyking.com/en_us/catalogsearch/result/?q=aluminium%20spacer#q=aluminium%20spacer&idx=hbk_live_magento_en_us_products_hbk_price_stock_7_group_0_asc)
 
-### Miscellaneous
+Miscellaneous
+-------------
 
 [2M PVC Heat Shrink Tubing For 18650 18500 Battery Flat Wide 29.5MM Round 18.5MM - US$2.08](https://www.banggood.com/2M-Flat-29_5MM-18_5MM-PVC-Heat-Shrink-Tubing-For-18650-18500-Battery-p-954761.html?ID=3153)
 
@@ -883,7 +926,8 @@ Yet another idea would be to use helicopter skids:
 
 [NanoPi NEO Core and NEO Core2 Allwinner H3/H5 Systems-on-Module Launched for $7.99 and Up](https://www.cnx-software.com/2017/12/13/nanopi-neo-core-and-neo-core2-allwinner-h3-h5-systems-on-module-launched-for-7-99-and-up/)
 
-### 200mm table ties
+200mm table ties
+----------------
 
 [10pcs 200mm Self-locking Nylon Wire Tie Cable Strap for RC Helicopter Parts Sale - Banggood.com](https://www.banggood.com/Self-Locking-Nylon-Wire-Tie-Cable-Strap-for-RC-Helicopter-Parts-p-1179970.html?ID=521800)
 
@@ -891,13 +935,15 @@ Yet another idea would be to use helicopter skids:
 
 [100 Pcs White Nylon Cable Zip Ties Nylon Cable Ties Wraps Zip Tie - US$2.29](https://www.banggood.com/100-Pcs-White-Nylon-Cable-Zip-Ties-Nylon-Cable-Ties-Wraps-Zip-Tie-p-1318085.html?ID=49640)
 
-### Setting expo in Ardupilot
+Setting expo in Ardupilot
+-------------------------
 
 [Copter: acro throttle and yaw expo and smoother manual throttle by rmackay9 · Pull Request #4973 · ArduPilot/ardupilot](https://github.com/ArduPilot/ardupilot/pull/4973)
 
 [Acro Mode — Copter documentation](https://ardupilot.org/copter/docs/acro-mode.html)
 
-### Cases
+Cases
+-----
 
 [Series: G-Mixerbag - Gator Cases](https://www.gatorcases.com/g-mixerbag/)
 
@@ -907,7 +953,8 @@ Yet another idea would be to use helicopter skids:
 
 [B&W Outdoor Case Typ 7800 2 Rollen günstig kaufen | Koffermarkt](https://www.koffermarkt.com/b-w-outdoor-case-typ-7800-2-rollen/)
 
-### Uncategorized
+Uncategorized
+-------------
 
 [arf-drone/parts.md at master · george-hawkins/arf-drone](https://github.com/george-hawkins/arf-drone/blob/master/parts.md)
 
@@ -933,7 +980,8 @@ Interesting alternatives to ArduPilot for indoor autonomous flight:
 
 [ArduBee Is a Small 3” Quadrotor Drone Equipped with ArduPilot - Hackster.io](https://www.hackster.io/news/ardubee-is-a-small-3-quadrotor-drone-equipped-with-ardupilot-a3a14f30547a)
 
-### Stereo cameras
+Stereo cameras
+--------------
 
 [OpenCV AI Kit by OpenCV — Kickstarter](https://www.kickstarter.com/projects/opencv/opencv-ai-kit/description)
 
@@ -943,13 +991,15 @@ Interesting alternatives to ArduPilot for indoor autonomous flight:
 
 [OpenCV AI Kit (OAK) - ROS Projects - ROS Discourse](https://discourse.ros.org/t/opencv-ai-kit-oak/15406/15)
 
-### GPS for smaller quads
+GPS for smaller quads
+---------------------
 
 [How to Setup GPS in Betaflight / Mini Quad - Oscar Liang](https://oscarliang.com/gps-mini-quad/)
 
 [Thiner BN-880Q](https://beitian.en.made-in-china.com/product/oCYmyFlrMsWb/China-Beitian-Compass-Qmc5883L-AMP2-6-Pix4-Pixhawk-Flight-Control-Glonass-GPS-Module-Bn-880q.html)
 
-### Pixhawk 4 PDB solutions - I'm no longer sure what I was aiming for here
+Pixhawk 4 PDB solutions - I'm no longer sure what I was aiming for here
+-----------------------------------------------------------------------
 
 [1m PVC Heat Shrink Tubing Black 30/40/46/50/60/70/86mm Wide For Lipo Battery Sale - Banggood.com](https://www.banggood.com/1m-PVC-Heat-Shrink-Tubing-Black-30404650607086mm-Wide-For-Lipo-Battery-p-1092332.html?ID=522617)
 
@@ -985,7 +1035,8 @@ Interesting alternatives to ArduPilot for indoor autonomous flight:
 
 [Cable Ties 160mm x 2.5mm White (100pcs)](https://hobbyking.com/en_us/cable-ties-160mm-x-2-5mm-white-100pcs.html)
 
-### Random
+Random
+------
 
 [Suleve™ M3NR1 M3 Nylon Screw White Nylon Screws Bolt & Nuts Assortment Kit 160 - US$5.99](https://www.banggood.com/160pcs-M3-White-Nylon-Screws-8-Sizes-Assortment-Stand-off-Bolt-Nuts-Kit-p-1000807.html)
 
